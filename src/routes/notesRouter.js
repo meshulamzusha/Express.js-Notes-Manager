@@ -29,7 +29,7 @@ router.use(async (req, res, next) => {
 router.get('/', async (req, res) => {
     try {
         const username = req.headers["user-auth"]
-        const notesRaw = await promises.readFile('./data/users.json');
+        const notesRaw = await promises.readFile('./data/notes.json');
         const notes = JSON.parse(usersRaw);
         const notesForUser = notes.filter(n => n.username == username);
 
